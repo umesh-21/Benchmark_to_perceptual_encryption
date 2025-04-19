@@ -1,58 +1,62 @@
 # Benchmark_to_perceptual_encryption
 
-Prerequisites
-Linux
+---
 
-Python 3
+## Prerequisites
 
-CPU or NVIDIA GPU with CUDA and cuDNN installed
+- Linux
+- Python 3
+- CPU or NVIDIA GPU with CUDA and cuDNN installed
 
-Installation
-Install dependencies
+---
 
-For pip users:
+## Installation
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-For conda users:
+1. **Install dependencies**
 
-bash
-Copy
-Edit
-conda env create -f environment.yml
-Dataset Preparation
-Encrypt the dataset using AVIH:
+   - **For `pip` users:**
+     ```bash
+     pip install -r requirements.txt
+     ```
 
-Follow the AVIH encryption guide here:
-👉 AVIH GitHub Repository
+   - **For `conda` users:**
+     ```bash
+     conda env create -f environment.yml
+     ```
 
-Dataset Format:
+---
 
-Please ensure your dataset follows the format specified in the pix2pix project:
-👉 pix2pix Dataset Format Guide
+## Dataset Preparation
 
-Pretrained Model:
+1. **Encrypt the dataset using AVIH:**
 
-Download the ResNet pre-trained model from:
-👉 ArcFace ResNet Model
+   Follow the AVIH encryption guide here:  
+   👉 [AVIH GitHub Repository](https://github.com/suzhigangssz/AVIH)
 
-Place the downloaded model file inside the ckpts folder.
+2. **Dataset Format:**
 
-Training
-To train the master key model (Ga):
+   Please ensure your dataset follows the format specified in the pix2pix project:  
+   👉 [pix2pix Dataset Format Guide](https://github.com/phillipi/pix2pix)
 
-bash
-Copy
-Edit
-python3 train.py --dataroot ./datasets/train_data --name facades_pix2pix --init_gain 0.01 --model pix2pix --netG resnet_9blocks --batch_size 32 --direction BtoA
-Testing
-To test the trained model:
+3. **Pretrained Model:**
 
-bash
-Copy
-Edit
+   Download the ResNet pre-trained model from:  
+   👉 [ArcFace ResNet Model](http://ml.cs.tsinghua.edu.cn/~xiaoyang/face_models/ArcFace/model_ir_se50.pth)  
+
+   Place the downloaded model file inside the `ckpts` folder.
+
+---
+
+## Training master key GAN model
+
+To train the **master key model (`Ga`)**:
+
+```bash
+python3 train.py --dataroot ./datasets/train_data --name facades_pix2pix --init_gain 0.01 --model pix2pix --netG resnet_9blocks --batch_size 32 --direction BtoA 
+
+```
+
+## Testing Master key GAN model
+```bash
 python3 test.py --dataroot ./datasets/test_data --name facades_pix2pix --model pix2pix --init_gain 0.01 --netG resnet_9blocks --direction BtoA
-✅ Note:
-Ensure your directory structure and data formats strictly follow the pix2pix specification to avoid runtime errors.
+```
