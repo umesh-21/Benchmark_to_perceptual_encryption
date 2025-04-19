@@ -1,0 +1,14 @@
+name: AGAN
+channels:
+- pytorch
+- defaults
+dependencies:
+- python=3.11
+- pytorch=2.2.1
+- scipy
+- pip
+- pip:
+  - torchvision==0.17.1
+  - Pillow==10.2.0
+  - numpy==1.19.2
+  - wandb==0.12.18
