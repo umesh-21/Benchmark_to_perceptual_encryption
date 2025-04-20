@@ -63,7 +63,6 @@ python3 test.py --dataroot ./datasets/test_data --name facades_pix2pix --model p
 
 ## 🤝 Acknowledgments
 
-- 🔗 [AVIH Encryption Code](https://github.com/suzhigangssz/AVIH)
 - 🔗 [Pix2Pix Framework](https://github.com/phillipi/pix2pix)
 - 🔗 [ResNet Pretrained Model](http://ml.cs.tsinghua.edu.cn/~xiaoyang/face_models/ArcFace/model_ir_se50.pth)
 
