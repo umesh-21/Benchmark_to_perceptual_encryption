@@ -1,5 +1,4 @@
-# Benchmark_to_perceptual_encryption
-
+#Is Perceptual Encryption Secure? A Security Benchmark for Perceptual Encryption Methods
 ---
 
 ## Prerequisites
